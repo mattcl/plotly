@@ -109,9 +109,9 @@ fn main() -> Result<()> {
 
     let mut cmd = Command::new("wget")
         .args([
-            KALEIDO_URL,
-            "-o",
+            "-O",
             kaleido_zip_file.as_path().to_str().unwrap(),
+            KALEIDO_URL,
         ])
         .spawn()
         .unwrap();
