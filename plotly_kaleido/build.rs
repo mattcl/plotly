@@ -107,13 +107,7 @@ fn main() -> Result<()> {
     let p = PathBuf::from(env::var("OUT_DIR").unwrap());
     let kaleido_zip_file = p.join("kaleido.zip");
 
-    let mut cmd = Command::new("cargo")
-        .args(["install", "ruget"])
-        .spawn()
-        .unwrap();
-    cmd.wait()?;
-
-    let mut cmd = Command::new("ruget")
+    let mut cmd = Command::new("wget")
         .args([
             KALEIDO_URL,
             "-o",
